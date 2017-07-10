@@ -35,12 +35,18 @@ func (tst *TST) Insert(keys []byte, value interface{}) {
 						current.left.key, current.left.parent = k, current
 					}
 					child = current.left
-				} else {
+				} else if k > current.key {
 					if current.right == nil {
 						current.right = &Node{values: make([]interface{}, 0)}
 						current.right.key, current.right.parent = k, current
 					}
 					child = current.right
+				} else {
+					if current.middle == nil {
+						current.middle = &Node{values: make([]interface{}, 0)}
+						current.middle.key, current.middle.parent = k, current
+					}
+					child = current.middle
 				}
 				parent, current = current, child
 			}
@@ -67,8 +73,10 @@ func (tst *TST) Query(keys []byte) []interface{} {
 		for current != nil && current.key != k {
 			if k < current.key {
 				current = current.left
-			} else {
+			} else if k > current.key {
 				current = current.right
+			} else {
+				current = current.middle
 			}
 		}
 	}
