@@ -1,7 +1,7 @@
 package bst
 
 import (
-	"goroom/bst"
+	"go-room/bst"
 	"testing"
 )
 
