@@ -1,4 +1,4 @@
-package bst
+package bst_test
 
 import (
 	"go-room/bst"

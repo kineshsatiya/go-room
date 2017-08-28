@@ -1,4 +1,4 @@
-package trie
+package trie_test
 
 import (
 	"go-room/trie"
