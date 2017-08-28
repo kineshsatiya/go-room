@@ -1,7 +1,7 @@
 package tst
 
 import (
-	"goroom/tst"
+	"go-room/tst"
 	"testing"
 )
 
